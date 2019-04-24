@@ -54,7 +54,7 @@
                 <ColumnDefinition Width="75*"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="agregarDocButton" Content="Agregar Documentos" FontSize="15" Margin="3" Click="AgregarDocClicked"/>
-            <Button Content="Procesar" Grid.Column="3" Grid.Row="1" FontSize="15" Margin="3"/>
+            <Button Content="Procesar" Grid.Column="3" Grid.Row="1" FontSize="15" Margin="3" Click="procesarClicked"/>
             <Button Content="Cancelar" Grid.Column="2" Grid.Row="1" FontSize="15" Margin="3"/>
             <Button Content="Imprimir" Grid.Column="3" FontSize="15" Margin="3" Click="ImprimirClicked"/>
         </Grid>

@@ -1,7 +1,9 @@
 ﻿using com.dir.inno.normalizacion_pdfs;
 using Microsoft.Win32;
 using NormalizacionPDF.Resources;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Windows;
 
 namespace NormalizacionPDF
@@ -46,38 +48,15 @@ namespace NormalizacionPDF
         {
             foreach (string element in archivos)
             {
-                string fileName = element;
-                string version;
-                bool impreso = EstaImpreso(element);
-                if (impreso)
-                {
-                    LectorPDFImpreso47 lector = new LectorPDFImpreso47(element);
-                    version = lector.obtenerVersion();
-                }
-                else
-                {
-                    version = "-";
-                }
-                ArchivoLista t = new ArchivoLista();
+                ArchivoLista t = new ArchivoLista(element);
                 t.Index = ListaTab.Items.Count + 1;
-                t.NombreArchivo = element;
-                t.Ruta = System.IO.Path.GetDirectoryName(element);
-                t.Version = version;
-                t.Impreso = impreso;
                 ListaArchivos.Add(t);
             }
         }
 
-        private bool EstaImpreso(string element)
-        {
-            LectorPDFImpreso47 lector = new LectorPDFImpreso47(element);
-            float number;
-            if (float.TryParse(lector.obtenerVersion(), out number)) return true;
-            else return false;
-        }
-
         private void ImprimirClicked(object sender, RoutedEventArgs e)
         {
+            HashSet<string> carpetasImpresos = new HashSet<string>();
             foreach (ArchivoLista a in ListaArchivos)
             {
                 if (!a.Impreso)
@@ -86,12 +65,33 @@ namespace NormalizacionPDF
                 }
                 else
                 {
-                    string fileName = System.IO.Path.GetFileName(a.NombreArchivo);
+                    string fileName = Path.GetFileName(a.NombreArchivo);
                     string targetPath = a.Ruta;
                     targetPath += @"\Impresos";
-                    string destFile = System.IO.Path.Combine(targetPath, fileName);
-                    System.IO.File.Copy(a.NombreArchivo, destFile, true);
+                    string destFile = Path.Combine(targetPath, fileName);
+                    File.Copy(a.NombreArchivo, destFile, true);
+                    carpetasImpresos.Add(destFile);
                 }
+            }
+            ListaArchivos.Clear();
+            List<string> archivosImpresos = new List<string>();
+            foreach (string a in carpetasImpresos)
+            {
+                archivosImpresos.AddRange(Directory.GetFiles(a));
+            }
+            foreach (string element in archivosImpresos)
+            {
+                ArchivoLista t = new ArchivoLista(element);
+                t.Index = ListaTab.Items.Count + 1;
+                ListaArchivos.Add(t);
+            }
+        }
+
+        private void procesarClicked(object sender, RoutedEventArgs e)
+        {
+            foreach(ArchivoLista a in ListaArchivos)
+            {
+                a.Procesar(tramitesCombo.SelectedItem);
             }
         }
     }

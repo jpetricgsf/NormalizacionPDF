@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e5378e3eadcf4856a639a9c9750c9e2a" Name="Diagram1" ZoomLevel="11">
+        <EntityTypeShape EntityType="DB_TestingModel.Actividad" Width="1.5" PointX="0.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TestingModel.actividadEmpresa" Width="1.5" PointX="3" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TestingModel.Domicilio" Width="1.5" PointX="8.25" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TestingModel.Efluente" Width="1.5" PointX="5.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TestingModel.EmisionGaseosa" Width="1.5" PointX="5.25" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TestingModel.Empresa" Width="1.5" PointX="0.75" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TestingModel.FormacionDePersonal" Width="1.5" PointX="5.25" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TestingModel.GrupoActividad" Width="1.5" PointX="1.5" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TestingModel.Insumo" Width="1.5" PointX="5.25" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TestingModel.MateriaPrima" Width="1.5" PointX="5.25" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TestingModel.Planta" Width="1.5" PointX="3" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TestingModel.Representante" Width="1.5" PointX="3" PointY="44.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TestingModel.ResiduosSolido" Width="1.5" PointX="5.25" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TestingModel.RiesgoPresunto" Width="1.5" PointX="5.25" PointY="34" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TestingModel.Subproducto" Width="1.5" PointX="5.25" PointY="37.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TestingModel.Producto" Width="1.5" PointX="5.25" PointY="41" IsExpanded="true" />
+        <AssociationConnector Association="DB_TestingModel.FK__actividad__cuacm__4A8310C6" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Actividad__grupo__489AC854" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__actividadE__cuit__498EEC8D" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Domicilio__cuit__4B7734FF" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Domicilio__idPla__4C6B5938" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Efluente__idPlan__55009F39" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__EmisionGa__idPla__540C7B00" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Planta__cuit__5224328E" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Representa__cuit__4D5F7D71" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Formacion__idPla__531856C7" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Insumo__idPlanta__51300E55" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__MateriaPr__idPla__503BEA1C" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Producto__idPlan__4E53A1AA" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__ResiduosS__idPla__55F4C372" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__RiesgoPre__idPla__56E8E7AB" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Subproduc__idPla__4F47C5E3" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

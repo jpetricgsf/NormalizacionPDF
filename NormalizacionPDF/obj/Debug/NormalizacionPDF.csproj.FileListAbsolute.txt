@@ -90,3 +90,10 @@ E:\Users\MODERNIZACION05\Desktop\tempNormPDF\NormalizacionPDF\NormalizacionPDF\o
 E:\Users\MODERNIZACION05\Desktop\tempNormPDF\NormalizacionPDF\NormalizacionPDF\obj\Debug\NormalizacionPDF.csproj.CopyComplete
 E:\Users\MODERNIZACION05\Desktop\tempNormPDF\NormalizacionPDF\NormalizacionPDF\obj\Debug\NormalizacionPDF.exe
 E:\Users\MODERNIZACION05\Desktop\tempNormPDF\NormalizacionPDF\NormalizacionPDF\obj\Debug\NormalizacionPDF.pdb
+E:\Users\MODERNIZACION05\Desktop\tempNormPDF\NormalizacionPDF\NormalizacionPDF\bin\Debug\DB_Testing.mdf
+E:\Users\MODERNIZACION05\Desktop\tempNormPDF\NormalizacionPDF\NormalizacionPDF\bin\Debug\DB_Testing_log.ldf
+E:\Users\MODERNIZACION05\Desktop\tempNormPDF\NormalizacionPDF\NormalizacionPDF\obj\Debug\NormalizacionPDF_Content.g.cs
+E:\Users\MODERNIZACION05\Desktop\tempNormPDF\NormalizacionPDF\NormalizacionPDF\bin\Debug\EntityFramework.dll
+E:\Users\MODERNIZACION05\Desktop\tempNormPDF\NormalizacionPDF\NormalizacionPDF\bin\Debug\EntityFramework.SqlServer.dll
+E:\Users\MODERNIZACION05\Desktop\tempNormPDF\NormalizacionPDF\NormalizacionPDF\bin\Debug\EntityFramework.xml
+E:\Users\MODERNIZACION05\Desktop\tempNormPDF\NormalizacionPDF\NormalizacionPDF\bin\Debug\EntityFramework.SqlServer.xml

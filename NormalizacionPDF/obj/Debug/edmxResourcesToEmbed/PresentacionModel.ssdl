@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_TestingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Actividad">
+    <Key>
+      <PropertyRef Name="cuacm" />
+    </Key>
+    <Property Name="cuacm" Type="int" Nullable="false" />
+    <Property Name="nombreActividad" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="estandar" Type="int" Nullable="false" />
+    <Property Name="grupo" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="actividadEmpresa">
+    <Key>
+      <PropertyRef Name="cuit" />
+      <PropertyRef Name="cuacm" />
+    </Key>
+    <Property Name="cuit" Type="int" Nullable="false" />
+    <Property Name="cuacm" Type="int" Nullable="false" />
+    <Property Name="orden" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Domicilio">
+    <Key>
+      <PropertyRef Name="tipo" />
+      <PropertyRef Name="calle" />
+      <PropertyRef Name="numero" />
+    </Key>
+    <Property Name="cuit" Type="int" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="calle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="numero" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="piso" Type="int" Nullable="false" />
+    <Property Name="depto" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="localidad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cp" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="telefono" Type="int" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idPlanta" Type="int" />
+  </EntityType>
+  <EntityType Name="Efluente">
+    <Key>
+      <PropertyRef Name="idEfluente" />
+    </Key>
+    <Property Name="procesoGenerador" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="componentesRelevantes" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="volumen" Type="float" Nullable="false" />
+    <Property Name="unidad" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="unidadDeTiempo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="gestion" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="cuerpoReceptor" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="idPlanta" Type="int" Nullable="false" />
+    <Property Name="idEfluente" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmisionGaseosa">
+    <Key>
+      <PropertyRef Name="idEmisionGaseosa" />
+    </Key>
+    <Property Name="tipo" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="emision" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="procesoGenerador" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="tratamiento" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="componentesRelevantes" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="idPlanta" Type="int" Nullable="false" />
+    <Property Name="idEmisionGaseosa" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="cuit" />
+    </Key>
+    <Property Name="cuit" Type="int" Nullable="false" />
+    <Property Name="razonSocial" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fechaInicioActividades" Type="date" Nullable="false" />
+    <Property Name="tipoPersona" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FormacionDePersonal">
+    <Key>
+      <PropertyRef Name="idFormacionPersonal" />
+    </Key>
+    <Property Name="cantidadObreros" Type="int" Nullable="false" />
+    <Property Name="capacitacionObreros" Type="bit" Nullable="false" />
+    <Property Name="cantidadTecnicos" Type="int" Nullable="false" />
+    <Property Name="capacitacionTecnicos" Type="bit" Nullable="false" />
+    <Property Name="cantidadProfesionales" Type="int" Nullable="false" />
+    <Property Name="capacitacionProfesionales" Type="bit" Nullable="false" />
+    <Property Name="idPlanta" Type="int" Nullable="false" />
+    <Property Name="idFormacionPersonal" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GrupoActividad">
+    <Key>
+      <PropertyRef Name="idGrupo" />
+    </Key>
+    <Property Name="idGrupo" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="nombreGrupo" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Insumo">
+    <Key>
+      <PropertyRef Name="idInsumo" />
+    </Key>
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estadoFisico" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="consumoAnual" Type="float" Nullable="false" />
+    <Property Name="unidad" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="almacenamiento" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="idPlanta" Type="int" Nullable="false" />
+    <Property Name="idInsumo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MateriaPrima">
+    <Key>
+      <PropertyRef Name="idMateriaPrima" />
+    </Key>
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estadoFisico" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="consumoAnual" Type="float" Nullable="false" />
+    <Property Name="unidad" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="almacenamiento" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="idPlanta" Type="int" Nullable="false" />
+    <Property Name="idMateriaPrima" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Planta">
+    <Key>
+      <PropertyRef Name="idPlanta" />
+    </Key>
+    <Property Name="idPlanta" Type="int" Nullable="false" />
+    <Property Name="cuit" Type="int" Nullable="false" />
+    <Property Name="superficieTotalM2" Type="float" Nullable="false" />
+    <Property Name="superficieCubiertaM2" Type="float" Nullable="false" />
+    <Property Name="potenciaInstaladaHP" Type="float" Nullable="false" />
+    <Property Name="dotacionDePersonal" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMALIZACIONPDF\NORMALIZACIONPDF\DB_TESTING.MDF.dbo.Producto' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="nombre" />
+      <PropertyRef Name="estadoFisico" />
+      <PropertyRef Name="produccionAnual" />
+      <PropertyRef Name="unidad" />
+      <PropertyRef Name="almacenamiento" />
+      <PropertyRef Name="clasificacion" />
+      <PropertyRef Name="especificacion" />
+      <PropertyRef Name="idPlanta" />
+    </Key>
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estadoFisico" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="produccionAnual" Type="float" Nullable="false" />
+    <Property Name="unidad" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="almacenamiento" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="clasificacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="especificacion" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="idPlanta" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Representante">
+    <Key>
+      <PropertyRef Name="documento" />
+    </Key>
+    <Property Name="documento" Type="int" Nullable="false" />
+    <Property Name="apellido" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cargo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cuit" Type="int" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="orden" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ResiduosSolidos">
+    <Key>
+      <PropertyRef Name="idResiduoSolido" />
+    </Key>
+    <Property Name="residuo" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="cantidad" Type="float" Nullable="false" />
+    <Property Name="unidad" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="periodo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="procesoGenerador" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="gestion" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="idPlanta" Type="int" Nullable="false" />
+    <Property Name="idResiduoSolido" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RiesgoPresunto">
+    <Key>
+      <PropertyRef Name="idRiesgoPresunto" />
+    </Key>
+    <Property Name="fuentesMoviles" Type="bit" Nullable="false" />
+    <Property Name="aparatosSometidos" Type="bit" Nullable="false" />
+    <Property Name="sustanciasQuimicas" Type="bit" Nullable="false" />
+    <Property Name="explosion" Type="bit" Nullable="false" />
+    <Property Name="incendio" Type="bit" Nullable="false" />
+    <Property Name="otro" Type="bit" Nullable="false" />
+    <Property Name="observaciones" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="idPlanta" Type="int" Nullable="false" />
+    <Property Name="idRiesgoPresunto" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subproducto">
+    <Key>
+      <PropertyRef Name="idSubProducto" />
+    </Key>
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estadoFisico" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="produccionAnual" Type="float" Nullable="false" />
+    <Property Name="unidad" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="almacenamiento" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="idPlanta" Type="int" Nullable="false" />
+    <Property Name="idSubProducto" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__actividad__cuacm__4A8310C6">
+    <End Role="Actividad" Type="Self.Actividad" Multiplicity="1" />
+    <End Role="actividadEmpresa" Type="Self.actividadEmpresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actividad">
+        <PropertyRef Name="cuacm" />
+      </Principal>
+      <Dependent Role="actividadEmpresa">
+        <PropertyRef Name="cuacm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Actividad__grupo__489AC854">
+    <End Role="GrupoActividad" Type="Self.GrupoActividad" Multiplicity="1" />
+    <End Role="Actividad" Type="Self.Actividad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GrupoActividad">
+        <PropertyRef Name="idGrupo" />
+      </Principal>
+      <Dependent Role="Actividad">
+        <PropertyRef Name="grupo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__actividadE__cuit__498EEC8D">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+    <End Role="actividadEmpresa" Type="Self.actividadEmpresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="cuit" />
+      </Principal>
+      <Dependent Role="actividadEmpresa">
+        <PropertyRef Name="cuit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Domicilio__cuit__4B7734FF">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+    <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="cuit" />
+      </Principal>
+      <Dependent Role="Domicilio">
+        <PropertyRef Name="cuit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Domicilio__idPla__4C6B5938">
+    <End Role="Planta" Type="Self.Planta" Multiplicity="0..1" />
+    <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planta">
+        <PropertyRef Name="idPlanta" />
+      </Principal>
+      <Dependent Role="Domicilio">
+        <PropertyRef Name="idPlanta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Efluente__idPlan__55009F39">
+    <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
+    <End Role="Efluente" Type="Self.Efluente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planta">
+        <PropertyRef Name="idPlanta" />
+      </Principal>
+      <Dependent Role="Efluente">
+        <PropertyRef Name="idPlanta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EmisionGa__idPla__540C7B00">
+    <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
+    <End Role="EmisionGaseosa" Type="Self.EmisionGaseosa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planta">
+        <PropertyRef Name="idPlanta" />
+      </Principal>
+      <Dependent Role="EmisionGaseosa">
+        <PropertyRef Name="idPlanta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Formacion__idPla__531856C7">
+    <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
+    <End Role="FormacionDePersonal" Type="Self.FormacionDePersonal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planta">
+        <PropertyRef Name="idPlanta" />
+      </Principal>
+      <Dependent Role="FormacionDePersonal">
+        <PropertyRef Name="idPlanta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Insumo__idPlanta__51300E55">
+    <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
+    <End Role="Insumo" Type="Self.Insumo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planta">
+        <PropertyRef Name="idPlanta" />
+      </Principal>
+      <Dependent Role="Insumo">
+        <PropertyRef Name="idPlanta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MateriaPr__idPla__503BEA1C">
+    <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
+    <End Role="MateriaPrima" Type="Self.MateriaPrima" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planta">
+        <PropertyRef Name="idPlanta" />
+      </Principal>
+      <Dependent Role="MateriaPrima">
+        <PropertyRef Name="idPlanta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Planta__cuit__5224328E">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+    <End Role="Planta" Type="Self.Planta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="cuit" />
+      </Principal>
+      <Dependent Role="Planta">
+        <PropertyRef Name="cuit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Producto__idPlan__4E53A1AA">
+    <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planta">
+        <PropertyRef Name="idPlanta" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="idPlanta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Representa__cuit__4D5F7D71">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+    <End Role="Representante" Type="Self.Representante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="cuit" />
+      </Principal>
+      <Dependent Role="Representante">
+        <PropertyRef Name="cuit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ResiduosS__idPla__55F4C372">
+    <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
+    <End Role="ResiduosSolidos" Type="Self.ResiduosSolidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planta">
+        <PropertyRef Name="idPlanta" />
+      </Principal>
+      <Dependent Role="ResiduosSolidos">
+        <PropertyRef Name="idPlanta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RiesgoPre__idPla__56E8E7AB">
+    <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
+    <End Role="RiesgoPresunto" Type="Self.RiesgoPresunto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planta">
+        <PropertyRef Name="idPlanta" />
+      </Principal>
+      <Dependent Role="RiesgoPresunto">
+        <PropertyRef Name="idPlanta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Subproduc__idPla__4F47C5E3">
+    <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
+    <End Role="Subproducto" Type="Self.Subproducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planta">
+        <PropertyRef Name="idPlanta" />
+      </Principal>
+      <Dependent Role="Subproducto">
+        <PropertyRef Name="idPlanta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="createDB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="DB_TestingModelStoreContainer">
+    <EntitySet Name="Actividad" EntityType="Self.Actividad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="actividadEmpresa" EntityType="Self.actividadEmpresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Domicilio" EntityType="Self.Domicilio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Efluente" EntityType="Self.Efluente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmisionGaseosa" EntityType="Self.EmisionGaseosa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empresa" EntityType="Self.Empresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FormacionDePersonal" EntityType="Self.FormacionDePersonal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GrupoActividad" EntityType="Self.GrupoActividad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Insumo" EntityType="Self.Insumo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MateriaPrima" EntityType="Self.MateriaPrima" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Planta" EntityType="Self.Planta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Representante" EntityType="Self.Representante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResiduosSolidos" EntityType="Self.ResiduosSolidos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RiesgoPresunto" EntityType="Self.RiesgoPresunto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subproducto" EntityType="Self.Subproducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Producto].[nombre] AS [nombre], 
+    [Producto].[estadoFisico] AS [estadoFisico], 
+    [Producto].[produccionAnual] AS [produccionAnual], 
+    [Producto].[unidad] AS [unidad], 
+    [Producto].[almacenamiento] AS [almacenamiento], 
+    [Producto].[clasificacion] AS [clasificacion], 
+    [Producto].[especificacion] AS [especificacion], 
+    [Producto].[idPlanta] AS [idPlanta]
+    FROM [dbo].[Producto] AS [Producto]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__actividad__cuacm__4A8310C6" Association="Self.FK__actividad__cuacm__4A8310C6">
+      <End Role="Actividad" EntitySet="Actividad" />
+      <End Role="actividadEmpresa" EntitySet="actividadEmpresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Actividad__grupo__489AC854" Association="Self.FK__Actividad__grupo__489AC854">
+      <End Role="GrupoActividad" EntitySet="GrupoActividad" />
+      <End Role="Actividad" EntitySet="Actividad" />
+    </AssociationSet>
+    <AssociationSet Name="FK__actividadE__cuit__498EEC8D" Association="Self.FK__actividadE__cuit__498EEC8D">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="actividadEmpresa" EntitySet="actividadEmpresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Domicilio__cuit__4B7734FF" Association="Self.FK__Domicilio__cuit__4B7734FF">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Domicilio" EntitySet="Domicilio" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Domicilio__idPla__4C6B5938" Association="Self.FK__Domicilio__idPla__4C6B5938">
+      <End Role="Planta" EntitySet="Planta" />
+      <End Role="Domicilio" EntitySet="Domicilio" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Efluente__idPlan__55009F39" Association="Self.FK__Efluente__idPlan__55009F39">
+      <End Role="Planta" EntitySet="Planta" />
+      <End Role="Efluente" EntitySet="Efluente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EmisionGa__idPla__540C7B00" Association="Self.FK__EmisionGa__idPla__540C7B00">
+      <End Role="Planta" EntitySet="Planta" />
+      <End Role="EmisionGaseosa" EntitySet="EmisionGaseosa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Formacion__idPla__531856C7" Association="Self.FK__Formacion__idPla__531856C7">
+      <End Role="Planta" EntitySet="Planta" />
+      <End Role="FormacionDePersonal" EntitySet="FormacionDePersonal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Insumo__idPlanta__51300E55" Association="Self.FK__Insumo__idPlanta__51300E55">
+      <End Role="Planta" EntitySet="Planta" />
+      <End Role="Insumo" EntitySet="Insumo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MateriaPr__idPla__503BEA1C" Association="Self.FK__MateriaPr__idPla__503BEA1C">
+      <End Role="Planta" EntitySet="Planta" />
+      <End Role="MateriaPrima" EntitySet="MateriaPrima" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Planta__cuit__5224328E" Association="Self.FK__Planta__cuit__5224328E">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Planta" EntitySet="Planta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Producto__idPlan__4E53A1AA" Association="Self.FK__Producto__idPlan__4E53A1AA">
+      <End Role="Planta" EntitySet="Planta" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Representa__cuit__4D5F7D71" Association="Self.FK__Representa__cuit__4D5F7D71">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Representante" EntitySet="Representante" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ResiduosS__idPla__55F4C372" Association="Self.FK__ResiduosS__idPla__55F4C372">
+      <End Role="Planta" EntitySet="Planta" />
+      <End Role="ResiduosSolidos" EntitySet="ResiduosSolidos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RiesgoPre__idPla__56E8E7AB" Association="Self.FK__RiesgoPre__idPla__56E8E7AB">
+      <End Role="Planta" EntitySet="Planta" />
+      <End Role="RiesgoPresunto" EntitySet="RiesgoPresunto" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Subproduc__idPla__4F47C5E3" Association="Self.FK__Subproduc__idPla__4F47C5E3">
+      <End Role="Planta" EntitySet="Planta" />
+      <End Role="Subproducto" EntitySet="Subproducto" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

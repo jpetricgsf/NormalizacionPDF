@@ -39,6 +39,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,6 +49,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -71,6 +73,12 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="IKVM.AWT.WinForms, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\ikvm-8.1.5717.0\bin\IKVM.AWT.WinForms.dll</HintPath>
@@ -187,6 +195,7 @@
       <HintPath>..\ikvm-8.1.5717.0\bin\Normalizacion_PDFs-1.0-SNAPSHOT.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Printing" />
     <Reference Include="System.Runtime.Serialization" />
@@ -209,6 +218,60 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="Persistence\Controllers\PresentacionController.cs" />
+    <Compile Include="Persistence\Model\Actividad.cs">
+      <DependentUpon>PresentacionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Model\actividadEmpresa.cs">
+      <DependentUpon>PresentacionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Model\Domicilio.cs">
+      <DependentUpon>PresentacionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Model\Efluente.cs">
+      <DependentUpon>PresentacionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Model\EmisionGaseosa.cs">
+      <DependentUpon>PresentacionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Model\Empresa.cs">
+      <DependentUpon>PresentacionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Model\FormacionDePersonal.cs">
+      <DependentUpon>PresentacionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Model\GrupoActividad.cs">
+      <DependentUpon>PresentacionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Model\Insumo.cs">
+      <DependentUpon>PresentacionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Model\MateriaPrima.cs">
+      <DependentUpon>PresentacionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Model\Planta.cs">
+      <DependentUpon>PresentacionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Model\PresentacionModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PresentacionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Model\Producto.cs">
+      <DependentUpon>PresentacionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Model\Representante.cs">
+      <DependentUpon>PresentacionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Model\ResiduosSolido.cs">
+      <DependentUpon>PresentacionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Model\RiesgoPresunto.cs">
+      <DependentUpon>PresentacionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Model\Subproducto.cs">
+      <DependentUpon>PresentacionModel.tt</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -216,8 +279,18 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ArchivoLista.cs" />
-    <Compile Include="PDFPrinter.cs" />
+    <Compile Include="Classes\ArchivoLista.cs" />
+    <Compile Include="Classes\PDFPrinter.cs" />
+    <Compile Include="Persistence\Model\PresentacionModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PresentacionModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Model\PresentacionModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PresentacionModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\StringResources.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -242,6 +315,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Persistence\Model\PresentacionModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PresentacionModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="packages.config" />
+    <None Include="Persistence\Model\PresentacionModel.edmx.diagram">
+      <DependentUpon>PresentacionModel.edmx</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -263,13 +344,27 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DB_Testing.mdf">
+    <Content Include="Persistence\DB\DB_Testing.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="DB_Testing_log.ldf">
+    <Content Include="Persistence\DB\DB_Testing_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DB_Testing.mdf</DependentUpon>
     </Content>
+    <Content Include="Persistence\Model\PresentacionModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PresentacionModel.edmx</DependentUpon>
+      <LastGenOutput>PresentacionModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Persistence\Model\PresentacionModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PresentacionModel.edmx</DependentUpon>
+      <LastGenOutput>PresentacionModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
