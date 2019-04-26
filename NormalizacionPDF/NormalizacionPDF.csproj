@@ -240,6 +240,7 @@
     <Compile Include="Persistence\Model\FormacionDePersonal.cs">
       <DependentUpon>PresentacionModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Persistence\Model\FormPresentacion.cs" />
     <Compile Include="Persistence\Model\GrupoActividad.cs">
       <DependentUpon>PresentacionModel.tt</DependentUpon>
     </Compile>

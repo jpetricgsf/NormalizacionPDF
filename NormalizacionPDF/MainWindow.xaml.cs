@@ -91,7 +91,7 @@ namespace NormalizacionPDF
         {
             foreach(ArchivoLista a in ListaArchivos)
             {
-                a.Procesar(tramitesCombo.SelectedItem);
+                a.Procesar(tramitesCombo.Text);
             }
         }
     }
