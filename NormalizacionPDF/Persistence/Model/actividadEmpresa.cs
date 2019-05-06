@@ -14,7 +14,7 @@ namespace NormalizacionPDF.Persistence.Model
     
     public partial class actividadEmpresa
     {
-        public int cuit { get; set; }
+        public long cuit { get; set; }
         public int cuacm { get; set; }
         public int orden { get; set; }
     

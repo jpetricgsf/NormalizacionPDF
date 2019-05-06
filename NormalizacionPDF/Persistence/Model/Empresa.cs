@@ -23,7 +23,7 @@ namespace NormalizacionPDF.Persistence.Model
             this.Representantes = new HashSet<Representante>();
         }
     
-        public int cuit { get; set; }
+        public long cuit { get; set; }
         public string razonSocial { get; set; }
         public System.DateTime fechaInicioActividades { get; set; }
         public int tipoPersona { get; set; }

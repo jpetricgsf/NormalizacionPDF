@@ -7,9 +7,6 @@
         xmlns:Properties="clr-namespace:NormalizacionPDF.Properties" x:Name="normalizacionPDFWin" x:Class="NormalizacionPDF.MainWindow"
         mc:Ignorable="d"
         Title="NormalizacionPDF" Height="450" Width="1071.5">
-    <Window.Resources>
-        <local:StringResources x:Key="StringResources"/>
-    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*"/>
@@ -25,10 +22,7 @@
             <ComboBox x:Name="tramitesCombo" 
                       Grid.Column="1" 
                       SelectedIndex="0" 
-                      FontSize="20" 
-                      IsEnabled="False"
-                      DataContext="{StaticResource ResourceKey=StringResources}"
-                      ItemsSource="{Binding Tramites}"/>
+                      FontSize="20" IsEnabled="False"/>
         </Grid>
         <DataGrid x:Name="ListaTab" Grid.Row="1" Margin="10,5" 
                   ItemsSource="{Binding ListaArchivos}" 
@@ -54,7 +48,7 @@
                 <ColumnDefinition Width="75*"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="agregarDocButton" Content="Agregar Documentos" FontSize="15" Margin="3" Click="AgregarDocClicked"/>
-            <Button Content="Procesar" Grid.Column="3" Grid.Row="1" FontSize="15" Margin="3" Click="procesarClicked"/>
+            <Button Content="Procesar" Grid.Column="3" Grid.Row="1" FontSize="15" Margin="3" Click="ProcesarClicked"/>
             <Button Content="Cancelar" Grid.Column="2" Grid.Row="1" FontSize="15" Margin="3"/>
             <Button Content="Imprimir" Grid.Column="3" FontSize="15" Margin="3" Click="ImprimirClicked"/>
         </Grid>

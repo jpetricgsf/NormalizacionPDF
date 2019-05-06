@@ -30,7 +30,7 @@ namespace NormalizacionPDF.Persistence.Model
         }
     
         public int idPlanta { get; set; }
-        public int cuit { get; set; }
+        public long cuit { get; set; }
         public double superficieTotalM2 { get; set; }
         public double superficieCubiertaM2 { get; set; }
         public double potenciaInstaladaHP { get; set; }

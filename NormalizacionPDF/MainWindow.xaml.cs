@@ -19,15 +19,23 @@ namespace NormalizacionPDF
         public MainWindow()
         {
             ListaArchivos = new ObservableCollection<ArchivoLista>();
+
             InitializeComponent();
+
+            foreach (string s in StringResources.Tramites)
+            {
+                tramitesCombo.Items.Add(s);
+            }
             ListaTab.DataContext = this;
         }
 
 
         public void AgregarDocClicked(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Multiselect = true;
+            OpenFileDialog dialog = new OpenFileDialog
+            {
+                Multiselect = true
+            };
             if (dialog.ShowDialog() == true)
             {
                 string[] archivos = dialog.FileNames;
@@ -48,8 +56,10 @@ namespace NormalizacionPDF
         {
             foreach (string element in archivos)
             {
-                ArchivoLista t = new ArchivoLista(element);
-                t.Index = ListaTab.Items.Count + 1;
+                ArchivoLista t = new ArchivoLista(element)
+                {
+                    Index = ListaTab.Items.Count + 1
+                };
                 ListaArchivos.Add(t);
             }
         }
@@ -81,13 +91,15 @@ namespace NormalizacionPDF
             }
             foreach (string element in archivosImpresos)
             {
-                ArchivoLista t = new ArchivoLista(element);
-                t.Index = ListaTab.Items.Count + 1;
+                ArchivoLista t = new ArchivoLista(element)
+                {
+                    Index = ListaTab.Items.Count + 1
+                };
                 ListaArchivos.Add(t);
             }
         }
 
-        private void procesarClicked(object sender, RoutedEventArgs e)
+        private void ProcesarClicked(object sender, RoutedEventArgs e)
         {
             foreach(ArchivoLista a in ListaArchivos)
             {

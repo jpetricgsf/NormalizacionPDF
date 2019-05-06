@@ -14,7 +14,7 @@ namespace NormalizacionPDF.Persistence.Model
     
     public partial class Domicilio
     {
-        public int cuit { get; set; }
+        public long cuit { get; set; }
         public string tipo { get; set; }
         public string calle { get; set; }
         public string numero { get; set; }

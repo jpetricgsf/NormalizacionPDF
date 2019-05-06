@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e5378e3eadcf4856a639a9c9750c9e2a" Name="Diagram1" ZoomLevel="11">
+      <Diagram DiagramId="c3855363edc94636a763e63626d48fc6" Name="Diagram1" ZoomLevel="40">
         <EntityTypeShape EntityType="DB_TestingModel.Actividad" Width="1.5" PointX="0.75" PointY="18.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_TestingModel.actividadEmpresa" Width="1.5" PointX="3" PointY="22.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_TestingModel.Domicilio" Width="1.5" PointX="8.25" PointY="24.5" IsExpanded="true" />
@@ -21,22 +21,22 @@
         <EntityTypeShape EntityType="DB_TestingModel.RiesgoPresunto" Width="1.5" PointX="5.25" PointY="34" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_TestingModel.Subproducto" Width="1.5" PointX="5.25" PointY="37.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_TestingModel.Producto" Width="1.5" PointX="5.25" PointY="41" IsExpanded="true" />
-        <AssociationConnector Association="DB_TestingModel.FK__actividad__cuacm__4A8310C6" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_TestingModel.FK__Actividad__grupo__489AC854" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_TestingModel.FK__actividadE__cuit__498EEC8D" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_TestingModel.FK__Domicilio__cuit__4B7734FF" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_TestingModel.FK__Domicilio__idPla__4C6B5938" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_TestingModel.FK__Efluente__idPlan__55009F39" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_TestingModel.FK__EmisionGa__idPla__540C7B00" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_TestingModel.FK__Planta__cuit__5224328E" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_TestingModel.FK__Representa__cuit__4D5F7D71" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_TestingModel.FK__Formacion__idPla__531856C7" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_TestingModel.FK__Insumo__idPlanta__51300E55" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_TestingModel.FK__MateriaPr__idPla__503BEA1C" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_TestingModel.FK__Producto__idPlan__4E53A1AA" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_TestingModel.FK__ResiduosS__idPla__55F4C372" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_TestingModel.FK__RiesgoPre__idPla__56E8E7AB" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_TestingModel.FK__Subproduc__idPla__4F47C5E3" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__actividad__cuacm__0D7A0286" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Actividad__grupo__0B91BA14" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__actividadE__cuit__0C85DE4D" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Domicilio__cuit__0E6E26BF" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Domicilio__idPla__0F624AF8" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Efluente__idPlan__17F790F9" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__EmisionGa__idPla__17036CC0" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Planta__cuit__151B244E" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Representa__cuit__10566F31" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Formacion__idPla__160F4887" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Insumo__idPlanta__14270015" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__MateriaPr__idPla__1332DBDC" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Producto__idPlan__114A936A" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__ResiduosS__idPla__18EBB532" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__RiesgoPre__idPla__19DFD96B" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TestingModel.FK__Subproduc__idPla__123EB7A3" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

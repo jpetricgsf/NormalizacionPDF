@@ -11,8 +11,10 @@ namespace NormalizacionPDF.Resources
 
         public static void PrintPDF(string pdfFileName)
         {
-            ProcessStartInfo infoPrintPdf = new ProcessStartInfo();
-            infoPrintPdf.FileName = pdfFileName;
+            ProcessStartInfo infoPrintPdf = new ProcessStartInfo
+            {
+                FileName = pdfFileName
+            };
             // The printer name is hardcoded here, but normally I get this from a combobox with all printers
             string printerName = "Adobe PDF";
             string driverName = "printqueue.inf";
@@ -23,8 +25,10 @@ namespace NormalizacionPDF.Resources
             infoPrintPdf.CreateNoWindow = true;
             infoPrintPdf.UseShellExecute = false;
             infoPrintPdf.WindowStyle = ProcessWindowStyle.Hidden;
-            Process printPdf = new Process();
-            printPdf.StartInfo = infoPrintPdf;
+            Process printPdf = new Process
+            {
+                StartInfo = infoPrintPdf
+            };
             printPdf.Start();
 
             // This time depends on the printer, but has to be long enough to

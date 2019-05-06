@@ -19,7 +19,7 @@
             <PropertyRef Name="cuit" />
             <PropertyRef Name="cuacm" />
           </Key>
-          <Property Name="cuit" Type="int" Nullable="false" />
+          <Property Name="cuit" Type="bigint" Nullable="false" />
           <Property Name="cuacm" Type="int" Nullable="false" />
           <Property Name="orden" Type="int" Nullable="false" />
         </EntityType>
@@ -29,7 +29,7 @@
             <PropertyRef Name="calle" />
             <PropertyRef Name="numero" />
           </Key>
-          <Property Name="cuit" Type="int" Nullable="false" />
+          <Property Name="cuit" Type="bigint" Nullable="false" />
           <Property Name="tipo" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="calle" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="numero" Type="varchar" MaxLength="6" Nullable="false" />
@@ -71,7 +71,7 @@
           <Key>
             <PropertyRef Name="cuit" />
           </Key>
-          <Property Name="cuit" Type="int" Nullable="false" />
+          <Property Name="cuit" Type="bigint" Nullable="false" />
           <Property Name="razonSocial" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="fechaInicioActividades" Type="date" Nullable="false" />
           <Property Name="tipoPersona" Type="int" Nullable="false" />
@@ -125,7 +125,7 @@
             <PropertyRef Name="idPlanta" />
           </Key>
           <Property Name="idPlanta" Type="int" Nullable="false" />
-          <Property Name="cuit" Type="int" Nullable="false" />
+          <Property Name="cuit" Type="bigint" Nullable="false" />
           <Property Name="superficieTotalM2" Type="float" Nullable="false" />
           <Property Name="superficieCubiertaM2" Type="float" Nullable="false" />
           <Property Name="potenciaInstaladaHP" Type="float" Nullable="false" />
@@ -161,7 +161,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
           <Property Name="apellido" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="cargo" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="cuit" Type="int" Nullable="false" />
+          <Property Name="cuit" Type="bigint" Nullable="false" />
           <Property Name="tipo" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="orden" Type="int" Nullable="false" />
         </EntityType>
@@ -204,7 +204,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
           <Property Name="idPlanta" Type="int" Nullable="false" />
           <Property Name="idSubProducto" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__actividad__cuacm__4A8310C6">
+        <Association Name="FK__actividad__cuacm__0D7A0286">
           <End Role="Actividad" Type="Self.Actividad" Multiplicity="1" />
           <End Role="actividadEmpresa" Type="Self.actividadEmpresa" Multiplicity="*" />
           <ReferentialConstraint>
@@ -216,7 +216,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Actividad__grupo__489AC854">
+        <Association Name="FK__Actividad__grupo__0B91BA14">
           <End Role="GrupoActividad" Type="Self.GrupoActividad" Multiplicity="1" />
           <End Role="Actividad" Type="Self.Actividad" Multiplicity="*" />
           <ReferentialConstraint>
@@ -228,7 +228,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__actividadE__cuit__498EEC8D">
+        <Association Name="FK__actividadE__cuit__0C85DE4D">
           <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
           <End Role="actividadEmpresa" Type="Self.actividadEmpresa" Multiplicity="*" />
           <ReferentialConstraint>
@@ -240,7 +240,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Domicilio__cuit__4B7734FF">
+        <Association Name="FK__Domicilio__cuit__0E6E26BF">
           <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
           <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
           <ReferentialConstraint>
@@ -252,7 +252,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Domicilio__idPla__4C6B5938">
+        <Association Name="FK__Domicilio__idPla__0F624AF8">
           <End Role="Planta" Type="Self.Planta" Multiplicity="0..1" />
           <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
           <ReferentialConstraint>
@@ -264,7 +264,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Efluente__idPlan__55009F39">
+        <Association Name="FK__Efluente__idPlan__17F790F9">
           <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
           <End Role="Efluente" Type="Self.Efluente" Multiplicity="*" />
           <ReferentialConstraint>
@@ -276,7 +276,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__EmisionGa__idPla__540C7B00">
+        <Association Name="FK__EmisionGa__idPla__17036CC0">
           <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
           <End Role="EmisionGaseosa" Type="Self.EmisionGaseosa" Multiplicity="*" />
           <ReferentialConstraint>
@@ -288,7 +288,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Formacion__idPla__531856C7">
+        <Association Name="FK__Formacion__idPla__160F4887">
           <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
           <End Role="FormacionDePersonal" Type="Self.FormacionDePersonal" Multiplicity="*" />
           <ReferentialConstraint>
@@ -300,7 +300,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Insumo__idPlanta__51300E55">
+        <Association Name="FK__Insumo__idPlanta__14270015">
           <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
           <End Role="Insumo" Type="Self.Insumo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -312,7 +312,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MateriaPr__idPla__503BEA1C">
+        <Association Name="FK__MateriaPr__idPla__1332DBDC">
           <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
           <End Role="MateriaPrima" Type="Self.MateriaPrima" Multiplicity="*" />
           <ReferentialConstraint>
@@ -324,7 +324,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Planta__cuit__5224328E">
+        <Association Name="FK__Planta__cuit__151B244E">
           <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
           <End Role="Planta" Type="Self.Planta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -336,7 +336,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Producto__idPlan__4E53A1AA">
+        <Association Name="FK__Producto__idPlan__114A936A">
           <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
           <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -348,7 +348,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Representa__cuit__4D5F7D71">
+        <Association Name="FK__Representa__cuit__10566F31">
           <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
           <End Role="Representante" Type="Self.Representante" Multiplicity="*" />
           <ReferentialConstraint>
@@ -360,7 +360,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ResiduosS__idPla__55F4C372">
+        <Association Name="FK__ResiduosS__idPla__18EBB532">
           <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
           <End Role="ResiduosSolidos" Type="Self.ResiduosSolidos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -372,7 +372,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__RiesgoPre__idPla__56E8E7AB">
+        <Association Name="FK__RiesgoPre__idPla__19DFD96B">
           <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
           <End Role="RiesgoPresunto" Type="Self.RiesgoPresunto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -384,7 +384,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Subproduc__idPla__4F47C5E3">
+        <Association Name="FK__Subproduc__idPla__123EB7A3">
           <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
           <End Role="Subproducto" Type="Self.Subproducto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -396,7 +396,6 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="createDB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DB_TestingModelStoreContainer">
           <EntitySet Name="Actividad" EntityType="Self.Actividad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="actividadEmpresa" EntityType="Self.actividadEmpresa" Schema="dbo" store:Type="Tables" />
@@ -425,67 +424,67 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
     [Producto].[idPlanta] AS [idPlanta]
     FROM [dbo].[Producto] AS [Producto]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__actividad__cuacm__4A8310C6" Association="Self.FK__actividad__cuacm__4A8310C6">
+          <AssociationSet Name="FK__actividad__cuacm__0D7A0286" Association="Self.FK__actividad__cuacm__0D7A0286">
             <End Role="Actividad" EntitySet="Actividad" />
             <End Role="actividadEmpresa" EntitySet="actividadEmpresa" />
           </AssociationSet>
-          <AssociationSet Name="FK__Actividad__grupo__489AC854" Association="Self.FK__Actividad__grupo__489AC854">
+          <AssociationSet Name="FK__Actividad__grupo__0B91BA14" Association="Self.FK__Actividad__grupo__0B91BA14">
             <End Role="GrupoActividad" EntitySet="GrupoActividad" />
             <End Role="Actividad" EntitySet="Actividad" />
           </AssociationSet>
-          <AssociationSet Name="FK__actividadE__cuit__498EEC8D" Association="Self.FK__actividadE__cuit__498EEC8D">
+          <AssociationSet Name="FK__actividadE__cuit__0C85DE4D" Association="Self.FK__actividadE__cuit__0C85DE4D">
             <End Role="Empresa" EntitySet="Empresa" />
             <End Role="actividadEmpresa" EntitySet="actividadEmpresa" />
           </AssociationSet>
-          <AssociationSet Name="FK__Domicilio__cuit__4B7734FF" Association="Self.FK__Domicilio__cuit__4B7734FF">
+          <AssociationSet Name="FK__Domicilio__cuit__0E6E26BF" Association="Self.FK__Domicilio__cuit__0E6E26BF">
             <End Role="Empresa" EntitySet="Empresa" />
             <End Role="Domicilio" EntitySet="Domicilio" />
           </AssociationSet>
-          <AssociationSet Name="FK__Domicilio__idPla__4C6B5938" Association="Self.FK__Domicilio__idPla__4C6B5938">
+          <AssociationSet Name="FK__Domicilio__idPla__0F624AF8" Association="Self.FK__Domicilio__idPla__0F624AF8">
             <End Role="Planta" EntitySet="Planta" />
             <End Role="Domicilio" EntitySet="Domicilio" />
           </AssociationSet>
-          <AssociationSet Name="FK__Efluente__idPlan__55009F39" Association="Self.FK__Efluente__idPlan__55009F39">
+          <AssociationSet Name="FK__Efluente__idPlan__17F790F9" Association="Self.FK__Efluente__idPlan__17F790F9">
             <End Role="Planta" EntitySet="Planta" />
             <End Role="Efluente" EntitySet="Efluente" />
           </AssociationSet>
-          <AssociationSet Name="FK__EmisionGa__idPla__540C7B00" Association="Self.FK__EmisionGa__idPla__540C7B00">
+          <AssociationSet Name="FK__EmisionGa__idPla__17036CC0" Association="Self.FK__EmisionGa__idPla__17036CC0">
             <End Role="Planta" EntitySet="Planta" />
             <End Role="EmisionGaseosa" EntitySet="EmisionGaseosa" />
           </AssociationSet>
-          <AssociationSet Name="FK__Formacion__idPla__531856C7" Association="Self.FK__Formacion__idPla__531856C7">
+          <AssociationSet Name="FK__Formacion__idPla__160F4887" Association="Self.FK__Formacion__idPla__160F4887">
             <End Role="Planta" EntitySet="Planta" />
             <End Role="FormacionDePersonal" EntitySet="FormacionDePersonal" />
           </AssociationSet>
-          <AssociationSet Name="FK__Insumo__idPlanta__51300E55" Association="Self.FK__Insumo__idPlanta__51300E55">
+          <AssociationSet Name="FK__Insumo__idPlanta__14270015" Association="Self.FK__Insumo__idPlanta__14270015">
             <End Role="Planta" EntitySet="Planta" />
             <End Role="Insumo" EntitySet="Insumo" />
           </AssociationSet>
-          <AssociationSet Name="FK__MateriaPr__idPla__503BEA1C" Association="Self.FK__MateriaPr__idPla__503BEA1C">
+          <AssociationSet Name="FK__MateriaPr__idPla__1332DBDC" Association="Self.FK__MateriaPr__idPla__1332DBDC">
             <End Role="Planta" EntitySet="Planta" />
             <End Role="MateriaPrima" EntitySet="MateriaPrima" />
           </AssociationSet>
-          <AssociationSet Name="FK__Planta__cuit__5224328E" Association="Self.FK__Planta__cuit__5224328E">
+          <AssociationSet Name="FK__Planta__cuit__151B244E" Association="Self.FK__Planta__cuit__151B244E">
             <End Role="Empresa" EntitySet="Empresa" />
             <End Role="Planta" EntitySet="Planta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Producto__idPlan__4E53A1AA" Association="Self.FK__Producto__idPlan__4E53A1AA">
+          <AssociationSet Name="FK__Producto__idPlan__114A936A" Association="Self.FK__Producto__idPlan__114A936A">
             <End Role="Planta" EntitySet="Planta" />
             <End Role="Producto" EntitySet="Producto" />
           </AssociationSet>
-          <AssociationSet Name="FK__Representa__cuit__4D5F7D71" Association="Self.FK__Representa__cuit__4D5F7D71">
+          <AssociationSet Name="FK__Representa__cuit__10566F31" Association="Self.FK__Representa__cuit__10566F31">
             <End Role="Empresa" EntitySet="Empresa" />
             <End Role="Representante" EntitySet="Representante" />
           </AssociationSet>
-          <AssociationSet Name="FK__ResiduosS__idPla__55F4C372" Association="Self.FK__ResiduosS__idPla__55F4C372">
+          <AssociationSet Name="FK__ResiduosS__idPla__18EBB532" Association="Self.FK__ResiduosS__idPla__18EBB532">
             <End Role="Planta" EntitySet="Planta" />
             <End Role="ResiduosSolidos" EntitySet="ResiduosSolidos" />
           </AssociationSet>
-          <AssociationSet Name="FK__RiesgoPre__idPla__56E8E7AB" Association="Self.FK__RiesgoPre__idPla__56E8E7AB">
+          <AssociationSet Name="FK__RiesgoPre__idPla__19DFD96B" Association="Self.FK__RiesgoPre__idPla__19DFD96B">
             <End Role="Planta" EntitySet="Planta" />
             <End Role="RiesgoPresunto" EntitySet="RiesgoPresunto" />
           </AssociationSet>
-          <AssociationSet Name="FK__Subproduc__idPla__4F47C5E3" Association="Self.FK__Subproduc__idPla__4F47C5E3">
+          <AssociationSet Name="FK__Subproduc__idPla__123EB7A3" Association="Self.FK__Subproduc__idPla__123EB7A3">
             <End Role="Planta" EntitySet="Planta" />
             <End Role="Subproducto" EntitySet="Subproducto" />
           </AssociationSet>
@@ -503,19 +502,19 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
           <Property Name="nombreActividad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="estandar" Type="Int32" Nullable="false" />
           <Property Name="grupo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="actividadEmpresas" Relationship="Self.FK__actividad__cuacm__4A8310C6" FromRole="Actividad" ToRole="actividadEmpresa" />
-          <NavigationProperty Name="GrupoActividad" Relationship="Self.FK__Actividad__grupo__489AC854" FromRole="Actividad" ToRole="GrupoActividad" />
+          <NavigationProperty Name="actividadEmpresas" Relationship="Self.FK__actividad__cuacm__0D7A0286" FromRole="Actividad" ToRole="actividadEmpresa" />
+          <NavigationProperty Name="GrupoActividad" Relationship="Self.FK__Actividad__grupo__0B91BA14" FromRole="Actividad" ToRole="GrupoActividad" />
         </EntityType>
         <EntityType Name="actividadEmpresa">
           <Key>
             <PropertyRef Name="cuit" />
             <PropertyRef Name="cuacm" />
           </Key>
-          <Property Name="cuit" Type="Int32" Nullable="false" />
+          <Property Name="cuit" Type="Int64" Nullable="false" />
           <Property Name="cuacm" Type="Int32" Nullable="false" />
           <Property Name="orden" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Actividad" Relationship="Self.FK__actividad__cuacm__4A8310C6" FromRole="actividadEmpresa" ToRole="Actividad" />
-          <NavigationProperty Name="Empresa" Relationship="Self.FK__actividadE__cuit__498EEC8D" FromRole="actividadEmpresa" ToRole="Empresa" />
+          <NavigationProperty Name="Actividad" Relationship="Self.FK__actividad__cuacm__0D7A0286" FromRole="actividadEmpresa" ToRole="Actividad" />
+          <NavigationProperty Name="Empresa" Relationship="Self.FK__actividadE__cuit__0C85DE4D" FromRole="actividadEmpresa" ToRole="Empresa" />
         </EntityType>
         <EntityType Name="Domicilio">
           <Key>
@@ -523,7 +522,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             <PropertyRef Name="calle" />
             <PropertyRef Name="numero" />
           </Key>
-          <Property Name="cuit" Type="Int32" Nullable="false" />
+          <Property Name="cuit" Type="Int64" Nullable="false" />
           <Property Name="tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="calle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="numero" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
@@ -534,8 +533,8 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
           <Property Name="telefono" Type="Int32" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idPlanta" Type="Int32" />
-          <NavigationProperty Name="Empresa" Relationship="Self.FK__Domicilio__cuit__4B7734FF" FromRole="Domicilio" ToRole="Empresa" />
-          <NavigationProperty Name="Planta" Relationship="Self.FK__Domicilio__idPla__4C6B5938" FromRole="Domicilio" ToRole="Planta" />
+          <NavigationProperty Name="Empresa" Relationship="Self.FK__Domicilio__cuit__0E6E26BF" FromRole="Domicilio" ToRole="Empresa" />
+          <NavigationProperty Name="Planta" Relationship="Self.FK__Domicilio__idPla__0F624AF8" FromRole="Domicilio" ToRole="Planta" />
         </EntityType>
         <EntityType Name="Efluente">
           <Key>
@@ -550,7 +549,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
           <Property Name="cuerpoReceptor" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idPlanta" Type="Int32" Nullable="false" />
           <Property Name="idEfluente" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Planta" Relationship="Self.FK__Efluente__idPlan__55009F39" FromRole="Efluente" ToRole="Planta" />
+          <NavigationProperty Name="Planta" Relationship="Self.FK__Efluente__idPlan__17F790F9" FromRole="Efluente" ToRole="Planta" />
         </EntityType>
         <EntityType Name="EmisionGaseosa">
           <Key>
@@ -563,20 +562,20 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
           <Property Name="componentesRelevantes" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idPlanta" Type="Int32" Nullable="false" />
           <Property Name="idEmisionGaseosa" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Planta" Relationship="Self.FK__EmisionGa__idPla__540C7B00" FromRole="EmisionGaseosa" ToRole="Planta" />
+          <NavigationProperty Name="Planta" Relationship="Self.FK__EmisionGa__idPla__17036CC0" FromRole="EmisionGaseosa" ToRole="Planta" />
         </EntityType>
         <EntityType Name="Empresa">
           <Key>
             <PropertyRef Name="cuit" />
           </Key>
-          <Property Name="cuit" Type="Int32" Nullable="false" />
+          <Property Name="cuit" Type="Int64" Nullable="false" />
           <Property Name="razonSocial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fechaInicioActividades" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="tipoPersona" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="actividadEmpresas" Relationship="Self.FK__actividadE__cuit__498EEC8D" FromRole="Empresa" ToRole="actividadEmpresa" />
-          <NavigationProperty Name="Domicilios" Relationship="Self.FK__Domicilio__cuit__4B7734FF" FromRole="Empresa" ToRole="Domicilio" />
-          <NavigationProperty Name="Plantas" Relationship="Self.FK__Planta__cuit__5224328E" FromRole="Empresa" ToRole="Planta" />
-          <NavigationProperty Name="Representantes" Relationship="Self.FK__Representa__cuit__4D5F7D71" FromRole="Empresa" ToRole="Representante" />
+          <NavigationProperty Name="actividadEmpresas" Relationship="Self.FK__actividadE__cuit__0C85DE4D" FromRole="Empresa" ToRole="actividadEmpresa" />
+          <NavigationProperty Name="Domicilios" Relationship="Self.FK__Domicilio__cuit__0E6E26BF" FromRole="Empresa" ToRole="Domicilio" />
+          <NavigationProperty Name="Plantas" Relationship="Self.FK__Planta__cuit__151B244E" FromRole="Empresa" ToRole="Planta" />
+          <NavigationProperty Name="Representantes" Relationship="Self.FK__Representa__cuit__10566F31" FromRole="Empresa" ToRole="Representante" />
         </EntityType>
         <EntityType Name="FormacionDePersonal">
           <Key>
@@ -590,7 +589,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
           <Property Name="capacitacionProfesionales" Type="Boolean" Nullable="false" />
           <Property Name="idPlanta" Type="Int32" Nullable="false" />
           <Property Name="idFormacionPersonal" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Planta" Relationship="Self.FK__Formacion__idPla__531856C7" FromRole="FormacionDePersonal" ToRole="Planta" />
+          <NavigationProperty Name="Planta" Relationship="Self.FK__Formacion__idPla__160F4887" FromRole="FormacionDePersonal" ToRole="Planta" />
         </EntityType>
         <EntityType Name="GrupoActividad">
           <Key>
@@ -598,7 +597,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
           </Key>
           <Property Name="idGrupo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="nombreGrupo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Actividads" Relationship="Self.FK__Actividad__grupo__489AC854" FromRole="GrupoActividad" ToRole="Actividad" />
+          <NavigationProperty Name="Actividads" Relationship="Self.FK__Actividad__grupo__0B91BA14" FromRole="GrupoActividad" ToRole="Actividad" />
         </EntityType>
         <EntityType Name="Insumo">
           <Key>
@@ -611,7 +610,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
           <Property Name="almacenamiento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idPlanta" Type="Int32" Nullable="false" />
           <Property Name="idInsumo" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Planta" Relationship="Self.FK__Insumo__idPlanta__51300E55" FromRole="Insumo" ToRole="Planta" />
+          <NavigationProperty Name="Planta" Relationship="Self.FK__Insumo__idPlanta__14270015" FromRole="Insumo" ToRole="Planta" />
         </EntityType>
         <EntityType Name="MateriaPrima">
           <Key>
@@ -624,29 +623,29 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
           <Property Name="almacenamiento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idPlanta" Type="Int32" Nullable="false" />
           <Property Name="idMateriaPrima" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Planta" Relationship="Self.FK__MateriaPr__idPla__503BEA1C" FromRole="MateriaPrima" ToRole="Planta" />
+          <NavigationProperty Name="Planta" Relationship="Self.FK__MateriaPr__idPla__1332DBDC" FromRole="MateriaPrima" ToRole="Planta" />
         </EntityType>
         <EntityType Name="Planta">
           <Key>
             <PropertyRef Name="idPlanta" />
           </Key>
           <Property Name="idPlanta" Type="Int32" Nullable="false" />
-          <Property Name="cuit" Type="Int32" Nullable="false" />
+          <Property Name="cuit" Type="Int64" Nullable="false" />
           <Property Name="superficieTotalM2" Type="Double" Nullable="false" />
           <Property Name="superficieCubiertaM2" Type="Double" Nullable="false" />
           <Property Name="potenciaInstaladaHP" Type="Double" Nullable="false" />
           <Property Name="dotacionDePersonal" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Domicilios" Relationship="Self.FK__Domicilio__idPla__4C6B5938" FromRole="Planta" ToRole="Domicilio" />
-          <NavigationProperty Name="Efluentes" Relationship="Self.FK__Efluente__idPlan__55009F39" FromRole="Planta" ToRole="Efluente" />
-          <NavigationProperty Name="EmisionGaseosas" Relationship="Self.FK__EmisionGa__idPla__540C7B00" FromRole="Planta" ToRole="EmisionGaseosa" />
-          <NavigationProperty Name="Empresa" Relationship="Self.FK__Planta__cuit__5224328E" FromRole="Planta" ToRole="Empresa" />
-          <NavigationProperty Name="FormacionDePersonals" Relationship="Self.FK__Formacion__idPla__531856C7" FromRole="Planta" ToRole="FormacionDePersonal" />
-          <NavigationProperty Name="Insumoes" Relationship="Self.FK__Insumo__idPlanta__51300E55" FromRole="Planta" ToRole="Insumo" />
-          <NavigationProperty Name="MateriaPrimas" Relationship="Self.FK__MateriaPr__idPla__503BEA1C" FromRole="Planta" ToRole="MateriaPrima" />
-          <NavigationProperty Name="Productoes" Relationship="Self.FK__Producto__idPlan__4E53A1AA" FromRole="Planta" ToRole="Producto" />
-          <NavigationProperty Name="ResiduosSolidos" Relationship="Self.FK__ResiduosS__idPla__55F4C372" FromRole="Planta" ToRole="ResiduosSolidos" />
-          <NavigationProperty Name="RiesgoPresuntoes" Relationship="Self.FK__RiesgoPre__idPla__56E8E7AB" FromRole="Planta" ToRole="RiesgoPresunto" />
-          <NavigationProperty Name="Subproductoes" Relationship="Self.FK__Subproduc__idPla__4F47C5E3" FromRole="Planta" ToRole="Subproducto" />
+          <NavigationProperty Name="Domicilios" Relationship="Self.FK__Domicilio__idPla__0F624AF8" FromRole="Planta" ToRole="Domicilio" />
+          <NavigationProperty Name="Efluentes" Relationship="Self.FK__Efluente__idPlan__17F790F9" FromRole="Planta" ToRole="Efluente" />
+          <NavigationProperty Name="EmisionGaseosas" Relationship="Self.FK__EmisionGa__idPla__17036CC0" FromRole="Planta" ToRole="EmisionGaseosa" />
+          <NavigationProperty Name="Empresa" Relationship="Self.FK__Planta__cuit__151B244E" FromRole="Planta" ToRole="Empresa" />
+          <NavigationProperty Name="FormacionDePersonals" Relationship="Self.FK__Formacion__idPla__160F4887" FromRole="Planta" ToRole="FormacionDePersonal" />
+          <NavigationProperty Name="Insumoes" Relationship="Self.FK__Insumo__idPlanta__14270015" FromRole="Planta" ToRole="Insumo" />
+          <NavigationProperty Name="MateriaPrimas" Relationship="Self.FK__MateriaPr__idPla__1332DBDC" FromRole="Planta" ToRole="MateriaPrima" />
+          <NavigationProperty Name="Productoes" Relationship="Self.FK__Producto__idPlan__114A936A" FromRole="Planta" ToRole="Producto" />
+          <NavigationProperty Name="ResiduosSolidos" Relationship="Self.FK__ResiduosS__idPla__18EBB532" FromRole="Planta" ToRole="ResiduosSolidos" />
+          <NavigationProperty Name="RiesgoPresuntoes" Relationship="Self.FK__RiesgoPre__idPla__19DFD96B" FromRole="Planta" ToRole="RiesgoPresunto" />
+          <NavigationProperty Name="Subproductoes" Relationship="Self.FK__Subproduc__idPla__123EB7A3" FromRole="Planta" ToRole="Subproducto" />
         </EntityType>
         <EntityType Name="Representante">
           <Key>
@@ -656,10 +655,10 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
           <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="cuit" Type="Int32" Nullable="false" />
+          <Property Name="cuit" Type="Int64" Nullable="false" />
           <Property Name="tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="orden" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Empresa" Relationship="Self.FK__Representa__cuit__4D5F7D71" FromRole="Representante" ToRole="Empresa" />
+          <NavigationProperty Name="Empresa" Relationship="Self.FK__Representa__cuit__10566F31" FromRole="Representante" ToRole="Empresa" />
         </EntityType>
         <EntityType Name="ResiduosSolido">
           <Key>
@@ -673,7 +672,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
           <Property Name="gestion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idPlanta" Type="Int32" Nullable="false" />
           <Property Name="idResiduoSolido" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Planta" Relationship="Self.FK__ResiduosS__idPla__55F4C372" FromRole="ResiduosSolidos" ToRole="Planta" />
+          <NavigationProperty Name="Planta" Relationship="Self.FK__ResiduosS__idPla__18EBB532" FromRole="ResiduosSolidos" ToRole="Planta" />
         </EntityType>
         <EntityType Name="RiesgoPresunto">
           <Key>
@@ -688,7 +687,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
           <Property Name="observaciones" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idPlanta" Type="Int32" Nullable="false" />
           <Property Name="idRiesgoPresunto" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Planta" Relationship="Self.FK__RiesgoPre__idPla__56E8E7AB" FromRole="RiesgoPresunto" ToRole="Planta" />
+          <NavigationProperty Name="Planta" Relationship="Self.FK__RiesgoPre__idPla__19DFD96B" FromRole="RiesgoPresunto" ToRole="Planta" />
         </EntityType>
         <EntityType Name="Subproducto">
           <Key>
@@ -701,7 +700,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
           <Property Name="almacenamiento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idPlanta" Type="Int32" Nullable="false" />
           <Property Name="idSubProducto" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Planta" Relationship="Self.FK__Subproduc__idPla__4F47C5E3" FromRole="Subproducto" ToRole="Planta" />
+          <NavigationProperty Name="Planta" Relationship="Self.FK__Subproduc__idPla__123EB7A3" FromRole="Subproducto" ToRole="Planta" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
@@ -722,9 +721,9 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
           <Property Name="clasificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="especificacion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idPlanta" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Planta" Relationship="Self.FK__Producto__idPlan__4E53A1AA" FromRole="Producto" ToRole="Planta" />
+          <NavigationProperty Name="Planta" Relationship="Self.FK__Producto__idPlan__114A936A" FromRole="Producto" ToRole="Planta" />
         </EntityType>
-        <Association Name="FK__actividad__cuacm__4A8310C6">
+        <Association Name="FK__actividad__cuacm__0D7A0286">
           <End Role="Actividad" Type="Self.Actividad" Multiplicity="1" />
           <End Role="actividadEmpresa" Type="Self.actividadEmpresa" Multiplicity="*" />
           <ReferentialConstraint>
@@ -736,7 +735,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Actividad__grupo__489AC854">
+        <Association Name="FK__Actividad__grupo__0B91BA14">
           <End Role="GrupoActividad" Type="Self.GrupoActividad" Multiplicity="1" />
           <End Role="Actividad" Type="Self.Actividad" Multiplicity="*" />
           <ReferentialConstraint>
@@ -748,7 +747,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__actividadE__cuit__498EEC8D">
+        <Association Name="FK__actividadE__cuit__0C85DE4D">
           <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
           <End Role="actividadEmpresa" Type="Self.actividadEmpresa" Multiplicity="*" />
           <ReferentialConstraint>
@@ -760,7 +759,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Domicilio__cuit__4B7734FF">
+        <Association Name="FK__Domicilio__cuit__0E6E26BF">
           <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
           <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
           <ReferentialConstraint>
@@ -772,7 +771,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Domicilio__idPla__4C6B5938">
+        <Association Name="FK__Domicilio__idPla__0F624AF8">
           <End Role="Planta" Type="Self.Planta" Multiplicity="0..1" />
           <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
           <ReferentialConstraint>
@@ -784,7 +783,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Efluente__idPlan__55009F39">
+        <Association Name="FK__Efluente__idPlan__17F790F9">
           <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
           <End Role="Efluente" Type="Self.Efluente" Multiplicity="*" />
           <ReferentialConstraint>
@@ -796,7 +795,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__EmisionGa__idPla__540C7B00">
+        <Association Name="FK__EmisionGa__idPla__17036CC0">
           <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
           <End Role="EmisionGaseosa" Type="Self.EmisionGaseosa" Multiplicity="*" />
           <ReferentialConstraint>
@@ -808,7 +807,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Planta__cuit__5224328E">
+        <Association Name="FK__Planta__cuit__151B244E">
           <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
           <End Role="Planta" Type="Self.Planta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -820,7 +819,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Representa__cuit__4D5F7D71">
+        <Association Name="FK__Representa__cuit__10566F31">
           <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
           <End Role="Representante" Type="Self.Representante" Multiplicity="*" />
           <ReferentialConstraint>
@@ -832,7 +831,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Formacion__idPla__531856C7">
+        <Association Name="FK__Formacion__idPla__160F4887">
           <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
           <End Role="FormacionDePersonal" Type="Self.FormacionDePersonal" Multiplicity="*" />
           <ReferentialConstraint>
@@ -844,7 +843,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Insumo__idPlanta__51300E55">
+        <Association Name="FK__Insumo__idPlanta__14270015">
           <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
           <End Role="Insumo" Type="Self.Insumo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -856,7 +855,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MateriaPr__idPla__503BEA1C">
+        <Association Name="FK__MateriaPr__idPla__1332DBDC">
           <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
           <End Role="MateriaPrima" Type="Self.MateriaPrima" Multiplicity="*" />
           <ReferentialConstraint>
@@ -868,7 +867,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Producto__idPlan__4E53A1AA">
+        <Association Name="FK__Producto__idPlan__114A936A">
           <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
           <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -880,7 +879,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ResiduosS__idPla__55F4C372">
+        <Association Name="FK__ResiduosS__idPla__18EBB532">
           <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
           <End Role="ResiduosSolidos" Type="Self.ResiduosSolido" Multiplicity="*" />
           <ReferentialConstraint>
@@ -892,7 +891,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__RiesgoPre__idPla__56E8E7AB">
+        <Association Name="FK__RiesgoPre__idPla__19DFD96B">
           <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
           <End Role="RiesgoPresunto" Type="Self.RiesgoPresunto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -904,7 +903,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Subproduc__idPla__4F47C5E3">
+        <Association Name="FK__Subproduc__idPla__123EB7A3">
           <End Role="Planta" Type="Self.Planta" Multiplicity="1" />
           <End Role="Subproducto" Type="Self.Subproducto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -916,7 +915,7 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DB_TestingEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DB_TestingEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Actividads" EntityType="Self.Actividad" />
           <EntitySet Name="actividadEmpresas" EntityType="Self.actividadEmpresa" />
           <EntitySet Name="Domicilios" EntityType="Self.Domicilio" />
@@ -933,78 +932,77 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
           <EntitySet Name="RiesgoPresuntoes" EntityType="Self.RiesgoPresunto" />
           <EntitySet Name="Subproductoes" EntityType="Self.Subproducto" />
           <EntitySet Name="Productoes" EntityType="Self.Producto" />
-          <AssociationSet Name="FK__actividad__cuacm__4A8310C6" Association="Self.FK__actividad__cuacm__4A8310C6">
+          <AssociationSet Name="FK__actividad__cuacm__0D7A0286" Association="Self.FK__actividad__cuacm__0D7A0286">
             <End Role="Actividad" EntitySet="Actividads" />
             <End Role="actividadEmpresa" EntitySet="actividadEmpresas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Actividad__grupo__489AC854" Association="Self.FK__Actividad__grupo__489AC854">
+          <AssociationSet Name="FK__Actividad__grupo__0B91BA14" Association="Self.FK__Actividad__grupo__0B91BA14">
             <End Role="GrupoActividad" EntitySet="GrupoActividads" />
             <End Role="Actividad" EntitySet="Actividads" />
           </AssociationSet>
-          <AssociationSet Name="FK__actividadE__cuit__498EEC8D" Association="Self.FK__actividadE__cuit__498EEC8D">
+          <AssociationSet Name="FK__actividadE__cuit__0C85DE4D" Association="Self.FK__actividadE__cuit__0C85DE4D">
             <End Role="Empresa" EntitySet="Empresas" />
             <End Role="actividadEmpresa" EntitySet="actividadEmpresas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Domicilio__cuit__4B7734FF" Association="Self.FK__Domicilio__cuit__4B7734FF">
+          <AssociationSet Name="FK__Domicilio__cuit__0E6E26BF" Association="Self.FK__Domicilio__cuit__0E6E26BF">
             <End Role="Empresa" EntitySet="Empresas" />
             <End Role="Domicilio" EntitySet="Domicilios" />
           </AssociationSet>
-          <AssociationSet Name="FK__Domicilio__idPla__4C6B5938" Association="Self.FK__Domicilio__idPla__4C6B5938">
+          <AssociationSet Name="FK__Domicilio__idPla__0F624AF8" Association="Self.FK__Domicilio__idPla__0F624AF8">
             <End Role="Planta" EntitySet="Plantas" />
             <End Role="Domicilio" EntitySet="Domicilios" />
           </AssociationSet>
-          <AssociationSet Name="FK__Efluente__idPlan__55009F39" Association="Self.FK__Efluente__idPlan__55009F39">
+          <AssociationSet Name="FK__Efluente__idPlan__17F790F9" Association="Self.FK__Efluente__idPlan__17F790F9">
             <End Role="Planta" EntitySet="Plantas" />
             <End Role="Efluente" EntitySet="Efluentes" />
           </AssociationSet>
-          <AssociationSet Name="FK__EmisionGa__idPla__540C7B00" Association="Self.FK__EmisionGa__idPla__540C7B00">
+          <AssociationSet Name="FK__EmisionGa__idPla__17036CC0" Association="Self.FK__EmisionGa__idPla__17036CC0">
             <End Role="Planta" EntitySet="Plantas" />
             <End Role="EmisionGaseosa" EntitySet="EmisionGaseosas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Planta__cuit__5224328E" Association="Self.FK__Planta__cuit__5224328E">
+          <AssociationSet Name="FK__Planta__cuit__151B244E" Association="Self.FK__Planta__cuit__151B244E">
             <End Role="Empresa" EntitySet="Empresas" />
             <End Role="Planta" EntitySet="Plantas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Representa__cuit__4D5F7D71" Association="Self.FK__Representa__cuit__4D5F7D71">
+          <AssociationSet Name="FK__Representa__cuit__10566F31" Association="Self.FK__Representa__cuit__10566F31">
             <End Role="Empresa" EntitySet="Empresas" />
             <End Role="Representante" EntitySet="Representantes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Formacion__idPla__531856C7" Association="Self.FK__Formacion__idPla__531856C7">
+          <AssociationSet Name="FK__Formacion__idPla__160F4887" Association="Self.FK__Formacion__idPla__160F4887">
             <End Role="Planta" EntitySet="Plantas" />
             <End Role="FormacionDePersonal" EntitySet="FormacionDePersonals" />
           </AssociationSet>
-          <AssociationSet Name="FK__Insumo__idPlanta__51300E55" Association="Self.FK__Insumo__idPlanta__51300E55">
+          <AssociationSet Name="FK__Insumo__idPlanta__14270015" Association="Self.FK__Insumo__idPlanta__14270015">
             <End Role="Planta" EntitySet="Plantas" />
             <End Role="Insumo" EntitySet="Insumoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__MateriaPr__idPla__503BEA1C" Association="Self.FK__MateriaPr__idPla__503BEA1C">
+          <AssociationSet Name="FK__MateriaPr__idPla__1332DBDC" Association="Self.FK__MateriaPr__idPla__1332DBDC">
             <End Role="Planta" EntitySet="Plantas" />
             <End Role="MateriaPrima" EntitySet="MateriaPrimas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Producto__idPlan__4E53A1AA" Association="Self.FK__Producto__idPlan__4E53A1AA">
+          <AssociationSet Name="FK__Producto__idPlan__114A936A" Association="Self.FK__Producto__idPlan__114A936A">
             <End Role="Planta" EntitySet="Plantas" />
             <End Role="Producto" EntitySet="Productoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__ResiduosS__idPla__55F4C372" Association="Self.FK__ResiduosS__idPla__55F4C372">
+          <AssociationSet Name="FK__ResiduosS__idPla__18EBB532" Association="Self.FK__ResiduosS__idPla__18EBB532">
             <End Role="Planta" EntitySet="Plantas" />
             <End Role="ResiduosSolidos" EntitySet="ResiduosSolidos" />
           </AssociationSet>
-          <AssociationSet Name="FK__RiesgoPre__idPla__56E8E7AB" Association="Self.FK__RiesgoPre__idPla__56E8E7AB">
+          <AssociationSet Name="FK__RiesgoPre__idPla__19DFD96B" Association="Self.FK__RiesgoPre__idPla__19DFD96B">
             <End Role="Planta" EntitySet="Plantas" />
             <End Role="RiesgoPresunto" EntitySet="RiesgoPresuntoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Subproduc__idPla__4F47C5E3" Association="Self.FK__Subproduc__idPla__4F47C5E3">
+          <AssociationSet Name="FK__Subproduc__idPla__123EB7A3" Association="Self.FK__Subproduc__idPla__123EB7A3">
             <End Role="Planta" EntitySet="Plantas" />
             <End Role="Subproducto" EntitySet="Subproductoes" />
           </AssociationSet>
-          <FunctionImport Name="createDB" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DB_TestingModelStoreContainer" CdmEntityContainer="DB_TestingEntities">
+        <EntityContainerMapping StorageEntityContainer="DB_TestingModelStoreContainer" CdmEntityContainer="DB_TestingEntities1">
           <EntitySetMapping Name="Actividads">
             <EntityTypeMapping TypeName="DB_TestingModel.Actividad">
               <MappingFragment StoreEntitySet="Actividad">
@@ -1208,7 +1206,6 @@ warning 6002: The table/view 'E:\USERS\MODERNIZACION05\DESKTOP\TEMPNORMPDF\NORMA
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="createDB" FunctionName="DB_TestingModel.Store.createDB" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

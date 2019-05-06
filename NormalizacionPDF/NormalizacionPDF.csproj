@@ -241,6 +241,15 @@
       <DependentUpon>PresentacionModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Persistence\Model\FormPresentacion.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ArchivoLista.cs" />
+    <Compile Include="Classes\PDFPrinter.cs" />
     <Compile Include="Persistence\Model\GrupoActividad.cs">
       <DependentUpon>PresentacionModel.tt</DependentUpon>
     </Compile>
@@ -253,10 +262,20 @@
     <Compile Include="Persistence\Model\Planta.cs">
       <DependentUpon>PresentacionModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Persistence\Model\PresentacionModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PresentacionModel.Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="Persistence\Model\PresentacionModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PresentacionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Model\PresentacionModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PresentacionModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Persistence\Model\Producto.cs">
       <DependentUpon>PresentacionModel.tt</DependentUpon>
@@ -272,25 +291,6 @@
     </Compile>
     <Compile Include="Persistence\Model\Subproducto.cs">
       <DependentUpon>PresentacionModel.tt</DependentUpon>
-    </Compile>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Classes\ArchivoLista.cs" />
-    <Compile Include="Classes\PDFPrinter.cs" />
-    <Compile Include="Persistence\Model\PresentacionModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PresentacionModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Persistence\Model\PresentacionModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PresentacionModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Resources\StringResources.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -316,11 +316,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <EntityDeploy Include="Persistence\Model\PresentacionModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PresentacionModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="packages.config" />
     <None Include="Persistence\Model\PresentacionModel.edmx.diagram">
       <DependentUpon>PresentacionModel.edmx</DependentUpon>
     </None>
@@ -345,6 +345,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DB_Testing.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB_Testing_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DB_Testing.mdf</DependentUpon>
+    </Content>
     <Content Include="Persistence\DB\DB_Testing.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -363,9 +374,5 @@
       <LastGenOutput>PresentacionModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

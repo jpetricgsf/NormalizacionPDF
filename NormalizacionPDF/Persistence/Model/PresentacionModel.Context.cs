@@ -12,13 +12,11 @@ namespace NormalizacionPDF.Persistence.Model
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.Data.Entity.Core.Objects;
-    using System.Linq;
     
-    public partial class DB_TestingEntities : DbContext
+    public partial class DB_TestingEntities1 : DbContext
     {
-        public DB_TestingEntities()
-            : base("name=DB_TestingEntities")
+        public DB_TestingEntities1()
+            : base("name=DB_TestingEntities1")
         {
         }
     
@@ -43,10 +41,5 @@ namespace NormalizacionPDF.Persistence.Model
         public virtual DbSet<RiesgoPresunto> RiesgoPresuntoes { get; set; }
         public virtual DbSet<Subproducto> Subproductoes { get; set; }
         public virtual DbSet<Producto> Productoes { get; set; }
-    
-        public virtual int createDB()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("createDB");
-        }
     }
 }

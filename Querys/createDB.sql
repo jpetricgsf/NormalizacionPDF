@@ -1,5 +1,5 @@
-﻿CREATE TABLE Empresa (
-    cuit int NOT NULL,
+CREATE TABLE Empresa (
+    cuit bigint NOT NULL,
     razonSocial varchar(50) NOT NULL,
     fechaInicioActividades date NOT NULL,
     tipoPersona int NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE Actividad (
 );
 
 CREATE TABLE actividadEmpresa (
-    cuit int NOT NULL,
+    cuit bigint NOT NULL,
     cuacm int NOT NULL,
     orden int NOT NULL,
     PRIMARY KEY (cuit, cuacm)
@@ -28,7 +28,7 @@ CREATE TABLE GrupoActividad (
 );
 
 CREATE TABLE Domicilio (
-    cuit int NOT NULL,
+    cuit bigint NOT NULL,
     tipo varchar(20) NOT NULL,
     calle varchar(50) NOT NULL,
     numero varchar(6) NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE Representante (
     apellido varchar(50) NOT NULL,
     nombre varchar(50) NOT NULL,
     cargo varchar(50) NOT NULL,
-    cuit int NOT NULL,
+    cuit bigint NOT NULL,
     tipo varchar(20) NOT NULL,
     orden int NOT NULL,
     PRIMARY KEY (documento)
@@ -99,7 +99,7 @@ CREATE TABLE Insumo (
 
 CREATE TABLE Planta (
     idPlanta int NOT NULL,
-    cuit int NOT NULL,
+    cuit bigint NOT NULL,
     superficieTotalM2 float NOT NULL,
     superficieCubiertaM2 float NOT NULL,
     potenciaInstaladaHP float NOT NULL,
@@ -178,7 +178,7 @@ ALTER TABLE Producto ADD FOREIGN KEY (idPlanta) REFERENCES Planta(idPlanta);
 ALTER TABLE Subproducto ADD FOREIGN KEY (idPlanta) REFERENCES Planta(idPlanta);
 ALTER TABLE MateriaPrima ADD FOREIGN KEY (idPlanta) REFERENCES Planta(idPlanta);
 ALTER TABLE Insumo ADD FOREIGN KEY (idPlanta) REFERENCES Planta(idPlanta);
-ALTER TABLE Planta ADD FOREIGN KEY (cuit) REFERENCES Domicilio(cuit);
+ALTER TABLE Planta ADD FOREIGN KEY (cuit) REFERENCES Empresa(cuit);
 ALTER TABLE FormacionDePersonal ADD FOREIGN KEY (idPlanta) REFERENCES Planta(idPlanta);
 ALTER TABLE EmisionGaseosa ADD FOREIGN KEY (idPlanta) REFERENCES Planta(idPlanta);
 ALTER TABLE Efluente ADD FOREIGN KEY (idPlanta) REFERENCES Planta(idPlanta);

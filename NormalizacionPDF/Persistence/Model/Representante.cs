@@ -18,7 +18,7 @@ namespace NormalizacionPDF.Persistence.Model
         public string apellido { get; set; }
         public string nombre { get; set; }
         public string cargo { get; set; }
-        public int cuit { get; set; }
+        public long cuit { get; set; }
         public string tipo { get; set; }
         public int orden { get; set; }
     
