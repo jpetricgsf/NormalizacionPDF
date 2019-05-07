@@ -17,7 +17,6 @@ CREATE TABLE Actividad (
 CREATE TABLE actividadEmpresa (
     cuit bigint NOT NULL,
     cuacm int NOT NULL,
-    orden int NOT NULL,
     PRIMARY KEY (cuit, cuacm)
 );
 
@@ -49,7 +48,6 @@ CREATE TABLE Representante (
     cargo varchar(50) NOT NULL,
     cuit bigint NOT NULL,
     tipo varchar(20) NOT NULL,
-    orden int NOT NULL,
     PRIMARY KEY (documento)
 );
 

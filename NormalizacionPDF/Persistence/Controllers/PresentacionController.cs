@@ -1,6 +1,7 @@
 ﻿using com.dir.inno.normalizacion_pdfs;
 using NormalizacionPDF.Persistence.Model;
 using System;
+using System.Collections.Generic;
 
 namespace NormalizacionPDF.Persistence.Controllers
 {
@@ -35,6 +36,27 @@ namespace NormalizacionPDF.Persistence.Controllers
             LectorPDFImpreso47V lector = new LectorPDFImpreso47V(nombreArchivo);
             FormPresentacion form = new FormPresentacion();
             form.Empresa.razonSocial = lector.obtenerNombre();
+            form.Empresa.cuit = lector.obtenerCuit().longValue();
+            //Proceso agregar fecha inicio. Unica forma de pasar de java.Date a System.Date
+            var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            form.Empresa.fechaInicioActividades = epoch.AddMilliseconds(lector.obtenerFechaInicioAct().getTime());
+            //Proceso de obtener actEmpresas. Se recorre la lista obtenida y se va agregando por problemas de pasar de java a C
+            form.Empresa.actividadEmpresas = new HashSet<actividadEmpresa>();
+            foreach(int a in lector.obtenerActividades())
+            {
+                actividadEmpresa act = new actividadEmpresa();
+                act.cuacm = a;
+                act.cuit = form.Empresa.cuit;
+
+
+                form.Empresa.actividadEmpresas.Add(a);
+            }
+            //Se traduce el string obtenido a una variable Dominio ya que el proyecto de java no cuenta con esa clase
+            string dom = lector.obtenerDomicilioLegal();
+            Domicilio legal = new Domicilio();
+
+
+
 
         }
     }

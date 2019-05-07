@@ -219,27 +219,6 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Compile Include="Persistence\Controllers\PresentacionController.cs" />
-    <Compile Include="Persistence\Model\Actividad.cs">
-      <DependentUpon>PresentacionModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Persistence\Model\actividadEmpresa.cs">
-      <DependentUpon>PresentacionModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Persistence\Model\Domicilio.cs">
-      <DependentUpon>PresentacionModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Persistence\Model\Efluente.cs">
-      <DependentUpon>PresentacionModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Persistence\Model\EmisionGaseosa.cs">
-      <DependentUpon>PresentacionModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Persistence\Model\Empresa.cs">
-      <DependentUpon>PresentacionModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Persistence\Model\FormacionDePersonal.cs">
-      <DependentUpon>PresentacionModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Persistence\Model\FormPresentacion.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -250,48 +229,6 @@
     </Compile>
     <Compile Include="Classes\ArchivoLista.cs" />
     <Compile Include="Classes\PDFPrinter.cs" />
-    <Compile Include="Persistence\Model\GrupoActividad.cs">
-      <DependentUpon>PresentacionModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Persistence\Model\Insumo.cs">
-      <DependentUpon>PresentacionModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Persistence\Model\MateriaPrima.cs">
-      <DependentUpon>PresentacionModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Persistence\Model\Planta.cs">
-      <DependentUpon>PresentacionModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Persistence\Model\PresentacionModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PresentacionModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Persistence\Model\PresentacionModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PresentacionModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Persistence\Model\PresentacionModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PresentacionModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Persistence\Model\Producto.cs">
-      <DependentUpon>PresentacionModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Persistence\Model\Representante.cs">
-      <DependentUpon>PresentacionModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Persistence\Model\ResiduosSolido.cs">
-      <DependentUpon>PresentacionModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Persistence\Model\RiesgoPresunto.cs">
-      <DependentUpon>PresentacionModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Persistence\Model\Subproducto.cs">
-      <DependentUpon>PresentacionModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Resources\StringResources.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -317,13 +254,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <EntityDeploy Include="Persistence\Model\PresentacionModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PresentacionModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Persistence\Model\PresentacionModel.edmx.diagram">
-      <DependentUpon>PresentacionModel.edmx</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -362,16 +292,6 @@
     <Content Include="Persistence\DB\DB_Testing_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DB_Testing.mdf</DependentUpon>
-    </Content>
-    <Content Include="Persistence\Model\PresentacionModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PresentacionModel.edmx</DependentUpon>
-      <LastGenOutput>PresentacionModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Persistence\Model\PresentacionModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PresentacionModel.edmx</DependentUpon>
-      <LastGenOutput>PresentacionModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

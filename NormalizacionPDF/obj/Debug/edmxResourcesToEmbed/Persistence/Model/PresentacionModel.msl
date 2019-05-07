@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DB_TestingModelStoreContainer" CdmEntityContainer="DB_TestingEntities">
+  <EntityContainerMapping StorageEntityContainer="DB_TestingModelStoreContainer" CdmEntityContainer="DB_TestingEntities1">
     <EntitySetMapping Name="Actividads">
       <EntityTypeMapping TypeName="DB_TestingModel.Actividad">
         <MappingFragment StoreEntitySet="Actividad">
@@ -204,6 +204,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="createDB" FunctionName="DB_TestingModel.Store.createDB" />
   </EntityContainerMapping>
 </Mapping>

@@ -51,3 +51,5 @@ E:\Users\MODERNIZACION05\Desktop\tempNormPDF\NormalizacionPDF\NormalizacionPDF\o
 E:\Users\MODERNIZACION05\Desktop\tempNormPDF\NormalizacionPDF\NormalizacionPDF\obj\Debug\NormalizacionPDF.exe
 E:\Users\MODERNIZACION05\Desktop\tempNormPDF\NormalizacionPDF\NormalizacionPDF\obj\Debug\NormalizacionPDF.pdb
 E:\Users\MODERNIZACION05\Desktop\tempNormPDF\NormalizacionPDF\NormalizacionPDF\obj\Debug\NormalizacionPDF.csprojAssemblyReference.cache
+E:\Users\MODERNIZACION05\Desktop\tempNormPDF\NormalizacionPDF\NormalizacionPDF\bin\Debug\DB_Testing.mdf
+E:\Users\MODERNIZACION05\Desktop\tempNormPDF\NormalizacionPDF\NormalizacionPDF\bin\Debug\DB_Testing_log.ldf

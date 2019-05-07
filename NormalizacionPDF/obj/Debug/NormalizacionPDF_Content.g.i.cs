@@ -12,7 +12,5 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("db_testing_log.ldf")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("persistence/db/db_testing.mdf")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("persistence/db/db_testing_log.ldf")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("persistence/model/presentacionmodel.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("persistence/model/presentacionmodel.tt")]
 
 
