@@ -219,7 +219,6 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Compile Include="Persistence\Controllers\PresentacionController.cs" />
-    <Compile Include="Persistence\Model\FormPresentacion.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -277,7 +276,9 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Persistence\Model\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="DB_Testing.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
